@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - AI Interview Prep</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>AI Interview Prep</h2>
+
+        <div>
+            <a href="/">Home</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>Welcome Back 👋</h1>
+
+        <p>Login to continue your interview preparation.</p>
+
+        <form method="POST" action="/login">
+
+           <input
+    type="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+>
+
+            <br><br>
+
+           <input
+    type="password"
+    name="password"
+    placeholder="Enter your password"
+    required
+>
+            <br><br>
+
+            <button type="submit" class="start-btn">
+                Login
+            </button>
+
+        </form>
+
+        <br>
+
+        <p>
+            Don't have an account?
+            <a href="/register">Create Account</a>
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        <p>© 2026 AI Interview Preparation System</p>
+
+    </footer>
+
+</body>
+
+</html>

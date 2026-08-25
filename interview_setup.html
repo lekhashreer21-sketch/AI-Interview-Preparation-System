@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Start Interview - AI Interview Prep</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>AI Interview Prep</h2>
+
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>🎯 Start Your Interview</h1>
+
+        <p>Choose your interview preferences.</p>
+
+        <form method="POST" action="/start-interview">
+
+            <br>
+
+            <label for="subject">
+                <strong>Select Subject</strong>
+            </label>
+
+            <br><br>
+
+            <select name="subject" id="subject" required>
+
+                <option value="">-- Select Subject --</option>
+
+                <option value="Python">Python</option>
+
+                <option value="Java">Java</option>
+
+                <option value="C++">C++</option>
+
+                <option value="Data Structures">
+                    Data Structures
+                </option>
+
+                <option value="DBMS">DBMS</option>
+
+                <option value="Operating Systems">
+                    Operating Systems
+                </option>
+
+                <option value="Computer Networks">
+                    Computer Networks
+                </option>
+
+                <option value="AI and ML">
+                    AI and ML
+                </option>
+
+            </select>
+
+            <br><br><br>
+
+
+            <label for="difficulty">
+                <strong>Select Difficulty</strong>
+            </label>
+
+            <br><br>
+
+            <select name="difficulty" id="difficulty" required>
+
+                <option value="">-- Select Difficulty --</option>
+
+                <option value="Easy">Easy</option>
+
+                <option value="Medium">Medium</option>
+
+                <option value="Hard">Hard</option>
+
+            </select>
+
+            <br><br><br>
+
+
+            <label for="questions">
+                <strong>Number of Questions</strong>
+            </label>
+
+            <br><br>
+
+            <select name="questions" id="questions" required>
+
+                <option value="5">5 Questions</option>
+
+                <option value="10">10 Questions</option>
+
+                <option value="15">15 Questions</option>
+
+            </select>
+
+            <br><br><br>
+
+
+            <button type="submit" class="start-btn">
+                Start Interview 🚀
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 AI Interview Preparation System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

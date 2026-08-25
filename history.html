@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>AI Interview Prep</h2>
+
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <section class="topics">
+
+        <h1>📊 Interview History</h1>
+
+        <p>Your previous interview performance</p>
+<div class="topic-container">
+
+    <div class="topic-card">
+        <h2>{{ statistics.total_interviews }}</h2>
+        <p>Total Interviews</p>
+    </div>
+
+    <div class="topic-card">
+        <h2>{{ "%.1f"|format(statistics.average_percentage) }}%</h2>
+        <p>Average Score</p>
+    </div>
+
+    <div class="topic-card">
+        <h2>{{ statistics.best_percentage }}%</h2>
+        <p>Best Score</p>
+    </div>
+
+</div>
+
+<br>
+
+        <br>
+
+        {% if results %}
+
+        <table>
+
+            <tr>
+                <th>Subject</th>
+                <th>Difficulty</th>
+                <th>Score</th>
+                <th>Percentage</th>
+            </tr>
+
+            {% for result in results %}
+
+            <tr>
+
+                <td>{{ result.subject }}</td>
+
+                <td>{{ result.difficulty }}</td>
+
+                <td>
+                    {{ result.score }} / {{ result.total_questions }}
+                </td>
+
+                <td>
+                    {{ result.percentage }}%
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        {% else %}
+
+        <h2>No interviews completed yet.</h2>
+
+        <p>Complete your first interview to see your results here.</p>
+
+        {% endif %}
+
+        <br><br>
+
+        <a href="/interview-setup" class="start-btn">
+            Start New Interview 🚀
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 AI Interview Preparation System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

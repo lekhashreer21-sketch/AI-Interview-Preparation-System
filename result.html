@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview Result - AI Interview Prep</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>AI Interview Prep</h2>
+
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>🎉 Interview Completed!</h1>
+
+        <p>Your interview has been completed successfully.</p>
+
+        <h2>Your Score</h2>
+
+        <h1>{{ score }} / {{ total }}</h1>
+
+        <p>
+            You scored {{ percentage }}%
+        </p>
+
+        {% if percentage >= 80 %}
+
+            <h2>🌟 Excellent Performance!</h2>
+
+        {% elif percentage >= 60 %}
+
+            <h2>👍 Good Job! Keep Practicing!</h2>
+
+        {% else %}
+
+            <h2>💪 Keep Practicing! You Can Improve!</h2>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/interview-setup" class="start-btn">
+            Try Again 🚀
+        </a>
+
+        <br><br>
+
+        <a href="/dashboard">
+            Back to Dashboard
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 AI Interview Preparation System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

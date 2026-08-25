@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - AI Interview Prep</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>AI Interview Prep</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>Welcome, {{ name }}! 👋</h1>
+
+        <p>
+            Ready to prepare for your next interview?
+        </p>
+
+       <a href="/interview-setup" class="start-btn">
+    Start Interview 🚀
+</a>
+<br><br>
+
+<a href="/history" class="start-btn">
+    📊 View Interview History
+</a>
+<div class="history-section">
+
+    <h2>📊 Recent Interviews</h2>
+
+    {% if recent_interviews %}
+
+    <table>
+
+        <tr>
+            <th>Subject</th>
+            <th>Difficulty</th>
+            <th>Score</th>
+            <th>Percentage</th>
+        </tr>
+
+        {% for interview in recent_interviews %}
+
+        <tr>
+            <td>{{ interview.subject }}</td>
+            <td>{{ interview.difficulty }}</td>
+            <td>
+                {{ interview.score }}/{{ interview.total_questions }}
+            </td>
+            <td>{{ interview.percentage }}%</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    {% else %}
+
+    <p>No interviews completed yet.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/history" class="start-btn">
+        View Full History 📈
+    </a>
+
+</div>
+    </section>
+
+
+    <section class="topics">
+
+        <h2>Choose Your Practice Area</h2>
+
+        <div class="topic-container">
+
+            <div class="topic-card">
+                💻 Programming
+            </div>
+
+            <div class="topic-card">
+                🧠 Data Structures
+            </div>
+
+            <div class="topic-card">
+                🗄️ DBMS
+            </div>
+
+            <div class="topic-card">
+                ⚙️ Operating Systems
+            </div>
+
+            <div class="topic-card">
+                🌐 Computer Networks
+            </div>
+
+            <div class="topic-card">
+                🤖 Artificial Intelligence
+            </div>
+
+            <div class="topic-card">
+                🐍 Python
+            </div>
+
+            <div class="topic-card">
+                ☕ Java
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 AI Interview Preparation System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

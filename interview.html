@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Interview - AI Interview Prep</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <h2>AI Interview Prep</h2>
+
+        <div>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <p>
+            Question {{ question_number }} of {{ total_questions }}
+        </p>
+
+        <h1>{{ question.question }}</h1>
+
+        <form method="POST" action="/submit-answer">
+
+            {% for option in question.options %}
+
+                <div>
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="answer"
+                            value="{{ option }}"
+                            required
+                        >
+
+                        {{ option }}
+
+                    </label>
+                </div>
+
+                <br>
+
+            {% endfor %}
+
+            <button type="submit" class="start-btn">
+                Submit Answer
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 AI Interview Preparation System
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
